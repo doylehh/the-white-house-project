@@ -1,1 +1,0 @@
-WARNING  utils.logger:test_logger.py:25 Test warning

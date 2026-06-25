@@ -1,1 +1,0 @@
-ERROR    utils.logger:test_logger.py:32 Test error
