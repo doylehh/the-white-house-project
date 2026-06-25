@@ -244,11 +244,11 @@ class ManyWebElements(WebElement):
 
     def _set_value(self, web_driver, value):
         """ Примечание: данное действие неприменимо для списка элементов. """
-        raise NotImplemented('This action is not applicable for the list of elements')
+        raise NotImplementedError('This action is not applicable for the list of elements')
 
     def click(self, hold_seconds=0, x_offset=0, y_offset=0):
         """ Примечание: данное действие неприменимо для списка элементов. """
-        raise NotImplemented('This action is not applicable for the list of elements')
+        raise NotImplementedError('This action is not applicable for the list of elements')
 
     def count(self):
         """ Сумма элементов. """

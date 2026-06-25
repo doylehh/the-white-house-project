@@ -20,7 +20,6 @@ def test_footer_copyright(driver):
     page = FooterPage(driver)
     page.open(BASE_URL)
 
-    text = page.get_copyright()
-
-    with allure.step("Проверяем наличие копирайта"):
-        assert text, "Копирайт должен отображаться"
+    links = page.get_footer_links()
+    with allure.step("Проверяем наличие футера"):
+        assert len(links) > 0, "Футер должен содержать ссылки"

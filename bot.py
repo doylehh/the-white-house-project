@@ -12,7 +12,7 @@ async def execute_command(cmd: str, update:Update, timeout: int = 300) -> str:
                                                      )
         stdout, stderr = await asyncio.wait_for(proc.communicate(), timeout)
         output = f"STDOUT:\n{stdout.decode().strip()}" if stdout else ''
-        output += f"\nSTDOUT:\n{stderr.decode().strip()}" if stdout else ''
+        output += f"\nSTDERR:\n{stderr.decode().strip()}" if stderr else ''
         return output.strip()
     except asyncio.TimeoutError:
         return f"Таймаут {timeout} сек"
@@ -30,7 +30,7 @@ async def run_api_test(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     result = await execute_command('pytest -s -v tests/api/ --alluredir=./results', update)
 
-    short_result = '\n'. join([line for line in result.split('\n') if "FAILD" in line or "ERROR" in line])
+    short_result = '\n'.join([line for line in result.split('\n') if "FAILED" in line or "ERROR" in line])
     await update.message.reply_text(f"Результат тстов\n{short_result[:3000]}" if short_result else  "Все тесты прошли успешно")
 
 

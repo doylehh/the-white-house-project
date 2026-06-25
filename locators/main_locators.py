@@ -10,4 +10,4 @@ class MainPage(WebPage):
 
         super().__init__(web_driver, url)
 
-    btn_news = WebElement(xpath='(//*[@class="class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37""])')
+    btn_news = WebElement(xpath='(//*[@class="menu-item menu-item-type-post_type menu-item-object-page menu-item-37"])')

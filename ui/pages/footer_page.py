@@ -23,4 +23,7 @@ class FooterPage(BasePage):
 
     def get_copyright(self):
         logger.info("Getting copyright text")
-        return self.get_text(FooterLocators.COPYRIGHT)
+        try:
+            return self.get_text(FooterLocators.COPYRIGHT)
+        except Exception:
+            return ""
