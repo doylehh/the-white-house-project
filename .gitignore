@@ -8,4 +8,9 @@ __pycache__/
 dist/
 build/
 .env
+.env.*
 screenshots/
+*.log
+venv/
+tests/api/allure-results/
+bot_results/

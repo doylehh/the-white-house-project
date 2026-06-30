@@ -35,15 +35,15 @@ class TestApiBody:
             body = response.text.lower()
             assert "contact" in body, "Contact page missing contact reference"
 
-    @allure.title("Page does not contain error messages")
+    @allure.title("Page does not contain error messages: {url}")
     @pytest.mark.parametrize("url", [
-        "https://www.whitehouse.gov/news/",
-        "https://www.whitehouse.gov/contact/",
-        "https://www.whitehouse.gov/gallery/",
+        "/news/",
+        "/contact/",
+        "/gallery/",
     ])
     def test_no_error_in_body(self, url):
         client = ApiClient()
-        response = client.get()
+        response = client.get(url)
 
         with allure.step("Check no error in body"):
             body_lower = response.text.lower()

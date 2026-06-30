@@ -1,0 +1,7 @@
+pytest>=8.0.0
+requests>=2.31.0
+allure-pytest>=2.13.0
+selenium>=4.15.0
+locust>=2.20.0
+python-telegram-bot>=20.0
+termcolor>=2.3.0

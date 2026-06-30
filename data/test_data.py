@@ -1,6 +1,3 @@
-from urls import BASE_URL
-
-
 class TestData:
     HEADER_LOCATORS = {
         "news": ("xpath", "//a[contains(text(), 'News')]"),

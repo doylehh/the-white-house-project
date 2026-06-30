@@ -19,11 +19,26 @@ jobs:
         with:
           python-version: '3.11'
 
+      - name: Install Chrome
+        uses: browser-actions/setup-chrome@v1
+        with:
+          chrome-version: stable
+
       - name: Install dependencies
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
       - name: Run UI tests
+        env:
+          HEADLESS: "true"
         run: |
-          pytest tests/ui -v
+          pytest tests/ui -v --alluredir=allure-results
+
+      - name: Upload Allure results
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-results-ui
+          path: allure-results/
+          retention-days: 30

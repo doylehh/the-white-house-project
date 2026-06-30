@@ -1,0 +1,13 @@
+[
+  {
+    "id": "b3cfd278",
+    "time": "2026-06-30 21:45:39",
+    "suite": "API тесты",
+    "passed": 101,
+    "failed": 0,
+    "errors": 0,
+    "elapsed": 23.5,
+    "user": "unknown",
+    "status": "OK"
+  }
+]
